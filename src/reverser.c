@@ -19,12 +19,16 @@
  * 02111-1301, USA.
  */
 
-#define PLUGIN_ID "core-sbalbp-reverser"
+#define PURPLE_PLUGINS
 
-#include "internal.h"
+#define PLUGIN_ID "core-sbalbp-reverser"
 
 #include <string.h>
 
+#include <glib.h>
+
+#include "notify.h"
+#include "plugin.h"
 #include "debug.h"
 #include "signals.h"
 #include "version.h"
@@ -132,16 +136,16 @@ static PurplePluginInfo info =
 	NULL,
 	PURPLE_PRIORITY_DEFAULT,
 
-	PLUGIN_ID,														// id
-	N_("Message reverser"),											// name
-	DISPLAY_VERSION,												// version
-	N_("Reverses the message sent if '***' is present in it."),		// summary
-	N_("Reverses the message sent if '***' is present in it."),		// description
-	"Sergio Balbuena <sbalbp@gmail.com>",							// author
-	PURPLE_WEBSITE,													// homepage
+	PLUGIN_ID,													// id
+	"Message reverser",											// name
+	"1.0",														// version
+	"Reverses the message sent if '***' is present in it.",		// summary
+	"Reverses the message sent if '***' is present in it.",		// description
+	"Sergio Balbuena <sbalbp@gmail.com>",						// author
+	"",															// homepage
 
-	plugin_load,													// load
-	plugin_unload,													// unload
+	plugin_load,												// load
+	plugin_unload,												// unload
 	NULL,
 
 	NULL,
