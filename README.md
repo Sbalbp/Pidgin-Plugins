@@ -7,19 +7,27 @@ reverse messages sent if a selected token is included in them.
 
 ##Requirements and installation
 
-These [tutorials](https://developer.pidgin.im/wiki/CHowTo "tutorials") should help anyone to get
-started on basic plugin development and installation, as they did for me.
+Two things are needed in order to compile a plugin for Pidgin:
 
-After following the tutorials you should already have a local installation of libpurple as well as glib.
-If you don't, you can get a pidgin tar file with libpurple [here](http://sourceforge.net/projects/pidgin/ "here") (don't forget to ./configure and make it, as explained in this [tutorial](https://developer.pidgin.im/wiki/CHowTo/BasicPluginHowto "tutorial").
-As for glib, just run:
+####glib
+
+To install glib just run:
 
 * apt-get install libglib2.0
 
-To compile the plugins just run the Makefile file (take into account that you might have to modify it so that the libpurple location matches that of yours):
+####libpurple
+
+Which is the library containing all the development sources and headers needed for Pidgin Plugins, as well as some example plugins to help new developers get started.
+You can get a pidgin .tar file with libpurple [here](http://sourceforge.net/projects/pidgin/ "here") (don't forget to './configure' and 'make' it, as explained in this [tutorial](https://developer.pidgin.im/wiki/CHowTo/BasicPluginHowto "tutorial").
+
+####Compilation
+
+A Makefile file is provided in this repository. It will be updated when new plugins are added.
+This Makefile automatically creates a '~/.purple/plugins' directory if it doesn't exist, as it is needed to store new plugins, and puts the plugin .so file inside said directory.
+To compile the plugins, run:
 
 * make
 
-If the compilation goes wrong it might be because the 'plugins' directory does not exist inside the '.purple' directory. Just create it so that the .so files can be stored inside it.
+**NOTE:** The Makefile file assumes that your libpurple directory (where you extracted and configured the pidgin .tar) is the same as mine, so you might have to change the **LIBPURPLE** flag so that the libpurple path matches that of yours.
 
-After this run Pidgin and the new plugin should show under the 'Tools -> Plugins' menu.
+After compilation, everything should be ready, so just run Pidgin and the new plugin should show under the 'Tools -> Plugins' menu.
