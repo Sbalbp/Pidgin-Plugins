@@ -31,3 +31,9 @@ To compile the plugins, run:
 **NOTE:** The Makefile file assumes that your libpurple directory (where you extracted and configured the pidgin .tar) is the same as mine, so you might have to change the **LIBPURPLE** flag so that the libpurple path matches that of yours.
 
 After compilation, everything should be ready, so just run Pidgin and the new plugin should show under the 'Tools -> Plugins' menu.
+
+##Windows installation
+
+Inside the **dll** folder are included .dll files of the plugins for their use in Windows. In order to make the plugin work in Windows you have to move the appropriate .dll file to your %APPDATA%/.purple/plugins folder.
+
+**NOTE:** The 'plugins' folder might not exist inside your '.purple' folder. In that case, just manually create it.
